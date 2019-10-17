@@ -1,0 +1,32 @@
+﻿@model GolfDraft2.Models.Draft
+
+    <div class="container">
+        <div class="row">&nbsp;</div>
+        <div class="row">
+            <div class="col-4">
+                Roster for: <input id="userName" value="@Model.MyTeam.Name" disabled />
+                <input id="userID" value="@Model.MyTeam.UserID" hidden />
+                <ul id="myTeamList"></ul>
+            </div>
+            <div class="col-4">
+                Logged in users
+                <ul id="conUsers"></ul>
+            </div>
+            <div class="col-4">
+                Available Players
+                <ul id="playerList">
+                    @foreach (var p in Model.Players)
+                    {
+                        <li id="@(p.FullName + "li")"><input type="button" id="@p.FullName" value="@p.FullName" onclick="draftPlayer(this.id)" /></li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <ul id="messagesList2"></ul>
+            </div>
+        </div>
+    </div>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/draft.js"></script>
