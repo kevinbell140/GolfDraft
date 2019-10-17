@@ -43,11 +43,6 @@ namespace GolfDraft2.Models
 
         public string PhotoUrl { get; set; }
 
-        //public virtual IEnumerable<PlayerSeason> PlayerSeasons { get; set; }
-
-        //public virtual IEnumerable<PlayerTournament> PlayerTournaments { get; set; }
-
-
         public DateTime Timestamp { get; set; } = DateTime.Now;
     }
 }
